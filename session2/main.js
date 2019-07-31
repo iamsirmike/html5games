@@ -34,12 +34,12 @@ function animate() {
 	ctx.fill();
 
 	//moving the ball
-	if (x + radius > innerWidth || x - radius < 0) {
+	if (x + radius > canvas.width || x - radius < 0) {
 		speedx = -speedx;
 	}
 	x += speedx;
 
-	if (y + radius > innerHeight || y - radius < 0) {
+	if (y + radius > canvas.height || y - radius < 0) {
 		speedy = -speedy;
 	}
 	y += speedy;
