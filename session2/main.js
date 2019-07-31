@@ -1,7 +1,7 @@
 let canvas = document.getElementById('myCanvas');
 
 //set canvas dimension
-canvas.height = window.innerHeight;
+canvas.height = window.innerHeight - 50;
 canvas.width = window.innerWidth;
 
 //set canvas context
@@ -18,33 +18,30 @@ let radius = 20;
 let speedx = 8;
 let speedy = 8;
 
-function animate(){
-    //request animation frame to enable us to add animations
-    requestAnimationFrame(animate);
+function animate() {
+	//request animation frame to enable us to add animations
+	requestAnimationFrame(animate);
 
-    //clear all the path
-    ctx.clearRect(0,0,innerWidth,innerHeight);
+	//clear all the path
+	ctx.clearRect(0, 0, innerWidth, innerHeight);
 
-    //draw our ball
-    ctx.beginPath();
-    ctx.arc(x,y,radius,0,Math.PI*2, false);
-    ctx.strokeStyle = 'red';
-    ctx.stroke();
-    ctx.fillStyle = 'cyan';
-    ctx.fill();
-    
-    //moving the ball
-    if (x + radius > innerWidth || x - radius < 0) {
-        speedx = -speedx;
-    }
-    x += speedx;
+	//draw our ball
+	ctx.beginPath();
+	ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+	ctx.strokeStyle = 'red';
+	ctx.stroke();
+	ctx.fillStyle = 'cyan';
+	ctx.fill();
 
-    if (y + radius > innerHeight || y - radius < 0) {
-        speedy = -speedy;
-    }
-    y += speedy;
+	//moving the ball
+	if (x + radius > innerWidth || x - radius < 0) {
+		speedx = -speedx;
+	}
+	x += speedx;
 
-    
+	if (y + radius > innerHeight || y - radius < 0) {
+		speedy = -speedy;
+	}
+	y += speedy;
 }
-animate()
-
+animate();
