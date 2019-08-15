@@ -1,6 +1,6 @@
 let canvas = document.getElementById('myCanvas');
+let ch = document.getElementById('start');
 let start = document.getElementById('start').addEventListener('click', mystart);
-
 
 //set canvas dimension
 canvas.height = window.innerHeight - 50;
@@ -30,7 +30,6 @@ function drawcircle() {
 }
 drawcircle();
 
-
 function bounceball() {
 	if (x + radius > canvas.width || x - radius < 0) {
 		speedx = -speedx;
@@ -59,4 +58,5 @@ function animate() {
 function mystart() {
 	drawcircle();
 	animate();
+	ch.innerText = 'Increase speed';
 }
